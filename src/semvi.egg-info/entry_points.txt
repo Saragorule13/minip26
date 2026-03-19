@@ -1,0 +1,2 @@
+[console_scripts]
+semvi = semvi.cli:main
