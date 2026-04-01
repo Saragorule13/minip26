@@ -19,7 +19,7 @@ export async function GET(request: Request) {
     
     const enrichedScans = scans.map(scan => {
       const findingsCount = db.prepare('SELECT COUNT(*) as count FROM findings WHERE scan_id = ?').get(scan.id) as { count: number };
-      const criticalCount = db.prepare('SELECT COUNT(*) as count FROM findings WHERE scan_id = ? AND severity="critical"').get(scan.id) as { count: number };
+      const criticalCount = db.prepare("SELECT COUNT(*) as count FROM findings WHERE scan_id = ? AND severity='critical'").get(scan.id) as { count: number };
       return { ...scan, total_findings: findingsCount.count, critical_findings: criticalCount.count };
     });
 
