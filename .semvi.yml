@@ -1,0 +1,23 @@
+severity_threshold: high
+report_title: Semvi Repository Risk Digest
+notify:
+  github_issue: true
+  webhook: false
+ignore_paths:
+  - ".git/"
+  - "node_modules/"
+  - ".venv/"
+  - "dist/"
+  - "build/"
+  - ".semvi-out/"
+memory_artifacts:
+  - ".env"
+  - ".pem"
+  - ".p12"
+  - ".sqlite"
+  - ".db"
+  - ".log"
+  - "heapdump"
+  - "session"
+  - "transcript"
+  - "conversation"
